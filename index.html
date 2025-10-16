@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DevTech Academy - Gerenciamento de Alunos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>DevTech Academy — Gerenciamento de Alunos</h1>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Cadastro de Aluno</h2>
+      <form id="alunoForm">
+        <input type="hidden" id="alunoIndex" value="-1">
+        <label>
+          Nome
+          <input id="nome" type="text" required>
+        </label>
+        <label>
+          Idade
+          <input id="idade" type="number" min="0" required>
+        </label>
+        <label>
+          Curso
+          <select id="curso" required>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+          </select>
+        </label>
+        <label>
+          Nota Final
+          <input id="notaFinal" type="number" min="0" max="10" step="0.1" required>
+        </label>
+
+        <div class="buttons">
+          <button id="btnCadastrar" type="submit">Cadastrar</button>
+          <button id="btnLimpar" type="button">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="table-section">
+      <h2>Alunos Cadastrados</h2>
+      <table id="tabelaAlunos">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Curso</th>
+            <th>Nota</th>
+            <th>Aprovado</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="reports-section">
+      <h2>Relatórios</h2>
+      <div class="reports">
+        <button id="listarAprovados">Listar Aprovados</button>
+        <button id="mediaNotas">Média das Notas</button>
+        <button id="mediaIdades">Média das Idades</button>
+        <button id="nomesOrdem">Nomes em Ordem Alfabética</button>
+        <button id="qtdPorCurso">Quantidade por Curso</button>
+        <button id="limparRelatorio">Limpar Resultado</button>
+      </div>
+      <div id="resultado" class="resultado"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Exercício DevTech Academy — CRUD de alunos</small>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

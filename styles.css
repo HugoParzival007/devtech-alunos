@@ -1,0 +1,107 @@
+/* Básico e legível — você pode simplificar se quiser */
+:root{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --max-width: 980px;
+  --accent: #2b7cff;
+  --muted: #666;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  padding:16px;
+  display:flex;
+  justify-content:center;
+  background:#f5f7fb;
+  color:#111;
+}
+
+main{
+  width:100%;
+  max-width:var(--max-width);
+}
+
+header,h2{ margin:8px 0;}
+header h1{ font-size:1.6rem; color:var(--accent) }
+
+.form-section, .table-section, .reports-section{
+  background:white;
+  padding:12px;
+  border-radius:8px;
+  box-shadow:0 4px 10px rgba(11,20,40,0.04);
+  margin-bottom:12px;
+}
+
+/* Form layout simples em grid */
+form#alunoForm{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap:8px;
+  align-items:center;
+}
+
+form label{
+  display:flex;
+  flex-direction:column;
+  font-size:0.9rem;
+  color:var(--muted);
+}
+
+form input, form select{
+  padding:8px;
+  margin-top:6px;
+  border:1px solid #ddd;
+  border-radius:6px;
+}
+
+.buttons{
+  grid-column:1/-1;
+  display:flex;
+  gap:8px;
+  justify-content:flex-end;
+}
+
+button{
+  padding:8px 12px;
+  border-radius:6px;
+  border:0;
+  cursor:pointer;
+  background:var(--accent);
+  color:white;
+}
+
+button[type="button"]{ background:#666; }
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:6px;
+}
+
+table th, table td{
+  border-bottom:1px solid #eee;
+  padding:8px;
+  text-align:left;
+  font-size:0.95rem;
+}
+
+.actions button{
+  margin-right:6px;
+  padding:6px 8px;
+  font-size:0.85rem;
+}
+
+/* Resultado do relatório */
+.resultado{
+  margin-top:10px;
+  padding:10px;
+  border-radius:6px;
+  background:#fafafa;
+  border:1px dashed #ddd;
+  min-height:40px;
+}
+
+/* Responsividade simples */
+@media (max-width:600px){
+  .buttons{ justify-content:stretch; flex-direction:column; }
+}
