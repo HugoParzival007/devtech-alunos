@@ -1,5 +1,4 @@
-// app.js
-// Usamos módulo ES para organização
+
 // Regras: classe Aluno, array em memória, métodos com arrow functions, addEventListener
 
 class Aluno {
